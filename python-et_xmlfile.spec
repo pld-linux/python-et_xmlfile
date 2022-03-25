@@ -6,7 +6,7 @@
 Summary:	An implementation of lxml.xmlfile for the standard library
 Name:		python-%{module}
 Version:	1.0.1
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/et_xmlfile/
