@@ -1,18 +1,21 @@
+#
 # Conditional build:
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
 %define		module		et_xmlfile
 Summary:	An implementation of lxml.xmlfile for the standard library
+Summary(pl.UTF-8):	Implementacja lxml.xmlfile dla biblioteki standardowej
 Name:		python-%{module}
+# keep 1.0.x here for python2 support
 Version:	1.0.1
 Release:	7
 License:	MIT
 Group:		Libraries/Python
-#Source0Download: https://pypi.org/simple/et_xmlfile/
+#Source0Download: https://pypi.org/simple/et-xmlfile/
 Source0:	https://files.pythonhosted.org/packages/source/e/et_xmlfile/%{module}-%{version}.tar.gz
 # Source0-md5:	f47940fd9d556375420b2e276476cfaf
-URL:		https://bitbucket.org/openpyxl/et_xmlfile
+URL:		https://pypi.org/project/et-xmlfile/
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.6
 BuildRequires:	python-setuptools
@@ -35,8 +38,17 @@ code to be developed that will work with both libraries. It was
 developed initially for the openpyxl project but is now a standalone
 module.
 
+%description -l pl.UTF-8
+et_xmlfile to używająca mało pamięci biblioteka do zapisu dużych
+plików XML.
+
+Jest oparta na module xmlfile z lxml z myślą o umożliwieniu tworzenia
+kodu działającego w obu bibliotekach. Początkowo powstała dla projektu
+openpyxl, ale obecnie jest samodzielnym modułem.
+
 %package -n python3-%{module}
 Summary:	An implementation of lxml.xmlfile for the standard library
+Summary(pl.UTF-8):	Implementacja lxml.xmlfile dla biblioteki standardowej
 Group:		Libraries/Python
 Requires:	python3-modules >= 1:3.3
 
@@ -47,6 +59,14 @@ It is based upon the xmlfile module from lxml with the aim of allowing
 code to be developed that will work with both libraries. It was
 developed initially for the openpyxl project but is now a standalone
 module.
+
+%description -n python3-%{module} -l pl.UTF-8
+et_xmlfile to używająca mało pamięci biblioteka do zapisu dużych
+plików XML.
+
+Jest oparta na module xmlfile z lxml z myślą o umożliwieniu tworzenia
+kodu działającego w obu bibliotekach. Początkowo powstała dla projektu
+openpyxl, ale obecnie jest samodzielnym modułem.
 
 %prep
 %setup -q -n %{module}-%{version}
