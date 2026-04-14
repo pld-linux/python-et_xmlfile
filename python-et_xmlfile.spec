@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	python2 # CPython 2.x module
-%bcond_without	python3 # CPython 3.x module
+%bcond_with	python3 # CPython 3.x module (built from python3-et_xmlfile.spec)
 
 %define		module		et_xmlfile
 Summary:	An implementation of lxml.xmlfile for the standard library
@@ -9,7 +9,7 @@ Summary(pl.UTF-8):	Implementacja lxml.xmlfile dla biblioteki standardowej
 Name:		python-%{module}
 # keep 1.0.x here for python2 support
 Version:	1.0.1
-Release:	7
+Release:	8
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/et-xmlfile/
